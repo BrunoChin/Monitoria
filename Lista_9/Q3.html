@@ -1,0 +1,29 @@
+<script>
+    var codigoProduto, quantidade;
+
+    codigoProduto = prompt("Informe o codigo do produto: ")
+    quantidade = prompt("Informe a quantidade do produto desejado: ")
+
+    switch(codigoProduto){
+        case "100":
+            document.write("Veco comprou ", quantidade, "conxinha(s), valor total R$"(3*quantidade).toFixed(2));
+            break;
+        case "101":
+            document.write("Veco comprou ", quantidade, "pastel(is), valor total R$"(2.5*quantidade).toFixed(2));
+            break;
+        case "102":
+            document.write("Veco comprou ", quantidade, "pipoca(s), valor total R$"(1.5*quantidade).toFixed(2));
+            break;
+        case "103":
+            document.write("Veco comprou ", quantidade, "bolo(s) de pote, valor total R$"(2*quantidade).toFixed(2));
+            break;
+        case "104":
+            document.write("Veco comprou ", quantidade, "copo(s) de suco, valor total R$"(quantidade).toFixed(2));
+            break;
+        case "105":
+            document.write("Veco comprou ", quantidade, "copo(s) de refrigerante, valor total R$"(1.5*quantidade).toFixed(2));
+            break;
+        default:
+            document.write("Codigo inexistente");
+    }
+</script>

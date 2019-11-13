@@ -1,0 +1,44 @@
+<script>
+    var sexo, altura, peso;
+
+    sexo = prompt("Digite 1 para masculino e 0 para feminino: ");
+    altura = prompt("Informe sua altura: ");
+    peso = prompt("Informe seu peso: ");
+
+    var imc = peso/(altura*altura);
+
+    if(sexo == 1){
+        if(imc < 20.7){
+            document.write("Abaixo do peso!");
+        }
+        else if(imc < 26.4){
+            document.write("Peso normal!");
+        }
+        else if(imc < 27.8){
+            document.write("Levemente acima do peso!");
+        }
+        else if(imc < 31.1){
+            document.write("Acima do peso!");
+        }
+        else{
+            document.write("Obeso")
+        }
+    }
+    else{
+        if(imc < 19.1){
+            document.write("Abaixo do peso!");
+        }
+        else if(imc < 25.8){
+            document.write("Peso normal!");
+        }
+        else if(imc < 27.3){
+            document.write("Levemente acima do peso!");
+        }
+        else if(imc < 32.3){
+            document.write("Acima do peso!");
+        }
+        else{
+            document.write("Obeso")
+        }
+    }
+</script>

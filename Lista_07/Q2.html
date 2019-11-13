@@ -1,0 +1,27 @@
+<script>
+    var salario, percentual
+    salario = parseFloat(prompt("Informe seu salario atual:"))
+
+    if(salario <= 400){
+        salario = salario*1.15
+        percentual = "15%"
+    }
+    else if(salario <= 700){
+        salario = salario*1.1
+        percentual = "10%"
+    }
+    else if(salario <= 1000){
+        salario = salario*1.07
+        percentual = "7%"
+    }
+    else if(salario <= 1600){
+        salario = salario*1.03
+        percentual = "3%"
+    }
+    else{
+        percentual = "Sem aumento"
+    }
+
+    document.write("Aumente de ", percentual, " Salario R$",salario.toFixed(2))
+
+</script>

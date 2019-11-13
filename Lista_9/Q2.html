@@ -1,0 +1,22 @@
+<script>
+    var salario, novo, plano
+    plano = prompt("Informe seu plano: ")
+    salario = prompt("Informe seu salario: ")
+    switch(plano){
+        case 'a':
+            novo = salario * 1.1
+            break
+        case 'b':
+            novo = salario * 1.2
+            break
+        case 'c': 
+            novo = salario * 1.3
+            break
+        default: 
+            document.write("Plano inexistente")
+            novo = salario
+            break
+    }
+
+    document.write("Seu salario eh: R$",novo.toFixed(2))
+</script>
