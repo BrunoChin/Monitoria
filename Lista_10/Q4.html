@@ -1,0 +1,16 @@
+<script>
+
+    function calcularArea(b, h){
+        return b*h
+    }
+
+    function calcularPerimetro(b, h){
+        return b*2 + h*2
+    }
+
+    var base = parseInt(prompt("Qual a base do retangulo"))
+    var altura = parseInt(prompt("Qual a altura do retangulo"))
+
+    document.write("A area do retangulo é: ", calcularArea(base, altura), "<br>")
+    document.write("O perimetro do retangulo é: ", calcularPerimetro(base, altura))
+</script>

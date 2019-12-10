@@ -1,0 +1,14 @@
+<script>
+    function mostrar(frase){
+        document.write(frase)
+    }
+
+    function calcularPontos(v, e){
+        return v * 3 + e
+    }
+
+    var vit = parseInt(prompt("Quantos jogos o time venceu"))
+    var emp = parseInt(prompt("Quantos jogos o time empatou"))
+
+    mostrar("O time tem " + calcularPontos(vit, emp) + " pontos")
+</script>

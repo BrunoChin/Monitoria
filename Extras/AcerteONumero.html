@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Acerte o numero</title>
+    <script>
+
+        var numSorteado = Math.floor(Math.random() * 100)
+
+        function verificar(){
+            var num = document.getElementById("numero").value
+            var numDigitados = document.getElementById("numDigitados")
+            var text
+            
+            if(num < numSorteado){
+                text = " Digitado: " + num + " tente um maior!"
+            }
+            else if(num > numSorteado){
+                text = " Digitado: " + num + " tente um menor!"
+            }
+            else{
+                alert("Parabens você acertou")
+                text = " Digitado: " + num + " Parabens voce acertou"
+            }
+            numDigitados.insertAdjacentHTML('beforeend', "<p>" + text + "</p>")
+            
+        }
+    </script>
+</head>
+<body>
+    <h1>Acerte o numero</h1>
+    <label>Digite um numero: </label>
+    <input type="text" id="numero">
+    <button onclick="verificar()">Enviar</button>
+    <br><h2>Numeros digitados: </h2>
+    <div id="numDigitados"> </div>
+</body>
+</html>

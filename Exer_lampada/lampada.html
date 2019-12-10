@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Estudo funcão</title>
+
+    <script>
+        var lampadaQuebrada = false
+        function mudar(tipo){
+            var luz = document.getElementById("luz")
+
+            if(!lampadaQuebrada){
+                if(tipo == 1){
+                luz.src = "lampada_acesa.jpeg"
+                }
+                else if(tipo == 2){
+                    luz.src = "lampada_apagada.jpeg"
+                }
+                else{
+                    luz.src = "lampada_quebrada.jpeg"
+                    lampadaQuebrada = true
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <h1>Acenda a lampada</h1>
+
+    <img src="lampada_apagada.jpeg" id="luz" alt="" onmouseover="mudar(1)" onmouseout="mudar(2)" onclick="mudar(3)">
+
+</body>
+</html>
