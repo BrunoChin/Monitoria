@@ -25,7 +25,14 @@
             }
         }
 
-        function setearNumeros(){
+        //event que acontece quando a tecla ENTER é precionada
+        document.addEventListener('keydown', (event) => {
+            if(event.keyCode == 13){
+                verificar()
+            }
+        });
+
+        function sortearNumeros(){
             var numero = Math.floor(Math.random() * 10)
             sequencia = sequencia + numero
             vetSequencia[rodada] = numero
@@ -33,9 +40,10 @@
         }
 
         function mostrarSequencia(){
-            setearNumeros()
+            sortearNumeros()
             for(var i = 0; i < rodada;i = i + 1){
-                console.log(vetSequencia[i])
+                console.log(vetSequencia[i] + "\n")
+                console.log(" ")
                 sleep(1000)
             }
             console.clear()
@@ -43,12 +51,12 @@
 
         function verificar(){
             var tentativa = document.getElementById("tentativa")
-            if(tentativa.value === sequencia){
+            if(tentativa.value == sequencia){
+                tentativa.value = ""
                 if(rodada == 10){
                     alert("Parebens voce passou todas a rodadas")
                 }
                 else{
-                    tentativa.value = ""
                     alert("Parabens vc acertou aperte Ok para ir para a proxima rodada")
                     mostrarSequencia()
                 }

@@ -9,22 +9,30 @@
 
         var numSorteado = Math.floor(Math.random() * 100)
 
+        //event que acontece quando a tecla ENTER é precionada
+        document.addEventListener('keydown', (event) => {
+            if(event.keyCode == 13){
+                verificar()
+            }
+        });
+
         function verificar(){
-            var num = document.getElementById("numero").value
+            var num = document.getElementById("numero")
             var numDigitados = document.getElementById("numDigitados")
             var text
             
-            if(num < numSorteado){
-                text = " Digitado: " + num + " tente um maior!"
+            if(num.value < numSorteado){
+                text = " Digitado: " + num.value + " tente um maior!"
             }
-            else if(num > numSorteado){
-                text = " Digitado: " + num + " tente um menor!"
+            else if(num.value > numSorteado){
+                text = " Digitado: " + num.value + " tente um menor!"
             }
             else{
                 alert("Parabens você acertou")
-                text = " Digitado: " + num + " Parabens voce acertou"
+                text = " Digitado: " + num.value + " Parabens voce acertou"
             }
             numDigitados.insertAdjacentHTML('beforeend', "<p>" + text + "</p>")
+            num.value = ""
             
         }
     </script>
