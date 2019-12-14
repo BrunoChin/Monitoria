@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jogo da Memoria</title>
+
+    <script>
+
+        var vetSequencia = []
+        var sequencia = ""
+        var rodada = 0
+        
+        alert("ATEÇÃO: A seguencia de numeros sera mostrada no console")
+        alert("Assim que apertar em OK seram mostrados os numeros")
+        mostrarSequencia()
+
+        function sleep(milliseconds){
+            var start = new Date().getTime()
+            for(var i = 0;i < 1e7; i = i + 1){
+                if((new Date().getTime() - start) > milliseconds){
+                    break
+                }
+            }
+        }
+
+        function setearNumeros(){
+            var numero = Math.floor(Math.random() * 10)
+            sequencia = sequencia + numero
+            vetSequencia[rodada] = numero
+            rodada = rodada + 1
+        }
+
+        function mostrarSequencia(){
+            setearNumeros()
+            for(var i = 0; i < rodada;i = i + 1){
+                console.log(vetSequencia[i])
+                sleep(1000)
+            }
+            console.clear()
+        }
+
+        function verificar(){
+            var tentativa = document.getElementById("tentativa")
+            if(tentativa.value === sequencia){
+                if(rodada == 10){
+                    alert("Parebens voce passou todas a rodadas")
+                }
+                else{
+                    tentativa.value = ""
+                    alert("Parabens vc acertou aperte Ok para ir para a proxima rodada")
+                    mostrarSequencia()
+                }
+            }
+            else{
+                document.write("<h1>Você errou :( </h1>")
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Jogo da Memoria</h1>
+    <label for="tentativas">Digite os numeros em seguencia(sem espaços):</label>
+    <br>
+    <input type="text" id="tentativa">
+    <input type="button" onclick="verificar()" value="Enviar">
+</body>
+</html>
