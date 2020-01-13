@@ -1,0 +1,11 @@
+<script>
+    var N = prompt("Digite um numero: ")
+    var anterio = 0, atual = 1, proxima
+
+    for(i = 0; i < N; i++){
+        document.write(atual, " ")
+        proxima = anterio + atual
+        anterio = atual
+        atual = proxima
+    }
+</script>

@@ -1,0 +1,11 @@
+<script>
+    var numJogadores = prompt("Digite o numero de jogadores: ")
+    var altura, alturaTotal = 0, media
+
+    for(i = 1; i <= numJogadores;i++){
+        altura = parseFloat(prompt("Informe a altura do " + i + "° jogador: "))
+        alturaTotal += altura
+    }
+    media = alturaTotal / numJogadores
+    document.write("A media de altura dos jogadores é: ", media.toFixed(2))
+</script>

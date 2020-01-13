@@ -1,0 +1,16 @@
+<script>
+    var N = prompt("Digite um numero: ")
+    var cont = 0
+
+    for(i = 1; i <= N; i++){
+        if(N%i == 0){
+            cont++
+        }
+    }
+    if(cont == 2){
+        document.write("O numero digita é primo")
+    }
+    else{
+        document.write("O numero digitado não é primo")
+    }
+</script>
